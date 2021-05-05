@@ -6,7 +6,8 @@ int main()
   int n=3,m=3;
   double a[n][m];
   double c[n][m];
-
+  bool b = 0; 
+ 
   cout<<"Enter the numbers of your matrix \n";
 
   for(int i=1;i<=n;i++) 
@@ -58,15 +59,12 @@ for(int i=1;i<=n;i++)
     }
   }
 }
-
-
+ 
   cout<<"\n\n";
 
   double det = a[1][1]*c[1][1] + a[1][2]*c[1][2] + a[1][3]*c[1][3];
   
-  string deter="det" , adj="adj" , inv= "inv" , ran="rank";
-  
-  
+  string deter="det" , adj="adj" , inv= "inv" , ran="rank";  
   
    cout<<"If you want the determinant of the given matrix then type 'yes' \n";
    cin>>deter;
@@ -75,12 +73,8 @@ for(int i=1;i<=n;i++)
 
 else
 {
-    
-
   if(deter=="yes" || deter=="Yes")
   cout<<"DETERMINANT:  "<<det<<" \n\n";
-  
-  
   
   cout<<"\nIf you want the adjoint of the given matrix then type 'yes' \n";
   cin>>adj;
@@ -95,8 +89,7 @@ else
    }
  }  
   
-  
-  
+ 
   cout<<"\nIf you want the inverse of the given matrix then type 'yes' \n";
   cin>>inv;
   if(inv=="yes" ||inv=="Yes" )
@@ -120,7 +113,7 @@ else
       if(det!=0)
       cout<<"Rank = 3\n";
       
-      else if(a[1][1]*a[2][2]-a[1][2]*a[2][1]!=0 || a[1][2]*a[2][3]-a[2][2]*a[1][3]!=0 || a[2][1]*a[3][2]-a[3][1]*a[2][2]!=0 || a[2][2]*a[3][3]-a[3][2]*a[2][3])
+      else if(c[3][3]!=0 || a[3][1]!=0 || a[1][1]!=0 || a[1][3]!=0)
       cout<<"Rank = 2\n";
       
       else if(b)
