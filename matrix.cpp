@@ -7,7 +7,7 @@ int main()
   double a[n][m];
   double c[n][m];
   bool b = 0; 
- 
+  
   cout<<"Enter the numbers of your matrix \n";
 
   for(int i=1;i<=n;i++) 
@@ -16,6 +16,29 @@ int main()
           cin>>a[i][j];
           if(a[i][j]!=0 && !b)b=1;
       }
+  string tran="tan";
+  cout<<"\nIf you want the transpose of the given matrix then type 'yes' \n";
+  cin>>tran;
+  if(tran=="yes" || tran=="Yes")
+  {
+    // Computing transpose of the matrix
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++) {
+          c[j][i] = a[i][j];
+        }
+
+    // Printing the transpose
+    cout << "\nTranspose of Matrix: " << endl;
+    for (int i = 1; i <= m; i++)
+        {
+            for (int j = 1; j <= n; j++) {
+            cout << " " << c[i][j];
+          }
+          cout<<endl;
+        }
+  }
+
+
 
 for(int i=1;i<=n;i++)
 {
@@ -123,6 +146,8 @@ else
       cout<<"Rank = 0\n";
     }
 
+
+    
   return 0;
 }
 
