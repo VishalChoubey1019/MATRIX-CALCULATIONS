@@ -6,6 +6,7 @@ int main()
   int n=3,m=3;
   double a[n][m];
   double c[n][m];
+  double d[n][m];
   bool b = 0; 
   
   cout<<"Enter the numbers of your matrix \n";
@@ -16,6 +17,7 @@ int main()
           cin>>a[i][j];
           if(a[i][j]!=0 && !b)b=1;
       }
+  
   string tran="tan";
   cout<<"\nIf you want the transpose of the given matrix then type 'yes' \n";
   cin>>tran;
@@ -25,6 +27,7 @@ int main()
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= m; j++) {
           c[j][i] = a[i][j];
+          d[j][i]=a[i][j];
         }
 
     // Printing the transpose
@@ -87,7 +90,7 @@ for(int i=1;i<=n;i++)
 
   double det = a[1][1]*c[1][1] + a[1][2]*c[1][2] + a[1][3]*c[1][3];
   
-  string deter="det" , adj="adj" , inv= "inv" , ran="rank";  
+  string deter="det" , adj="adj" , inv= "inv" , ran="rank",ort="ort";  
   
    cout<<"If you want the determinant of the given matrix then type 'yes' \n";
    cin>>deter;
@@ -116,17 +119,31 @@ else
   cout<<"\nIf you want the inverse of the given matrix then type 'yes' \n";
   cin>>inv;
   if(inv=="yes" ||inv=="Yes" )
- {
-    cout<<"\n\nINVERSE OF THE MATRIX: \n\n";
-    for(int i=1;i<=n;i++)
-    {
-      for(int j=1;j<=m;j++)
-        cout<<setprecision(3)<<double(c[j][i]/det)<<"   "; 
+  {
+      cout<<"\n\nINVERSE OF THE MATRIX: \n\n";
+      for(int i=1;i<=n;i++)
+      {
+        for(int j=1;j<=m;j++)
+          cout<<setprecision(3)<<double(c[j][i]/det)<<"   "; 
+      
+          cout<<"\n\n";
+      }
     
-        cout<<"\n\n";
+  }
+  cout<<"\nIf you want to know if the matrix is orthogonal then type 'yes' \n";
+  cin>>ort;
+  if(ort=="yes"||ort=="Yes"){
+    int flag=1;
+    for(int i=1;i<=n;i++){
+      for(int j=1;j<=m;j++){
+        if(d[i][j]!=(c[i][j]/det)) flag=0;
+        
+      }
     }
-  
- } 
+    if(flag) cout<<"\n Matrix is Orthogonal";
+    else cout<<"\nMatrix is not orthogonal";
+  }
+
 }
 
   cout<<"\nIf you want the rank of the given matrix then type 'yes' \n";
