@@ -18,10 +18,10 @@ int main()
           if(a[i][j]!=0 && !b)b=1;
       }
   
-  string tran="tan";
+  string trans="tan";
   cout<<"\nIf you want the transpose of the given matrix then type 'yes' \n";
-  cin>>tran;
-  if(tran=="yes" || tran=="Yes")
+  cin>>trans;
+  if(trans=="yes" || trans=="Yes")
   {
     // Computing transpose of the matrix
     for (int i = 1; i <= n; i++)
@@ -90,16 +90,20 @@ for(int i=1;i<=n;i++)
 
   double det = a[1][1]*c[1][1] + a[1][2]*c[1][2] + a[1][3]*c[1][3];
   
-  string deter="det" , adj="adj" , inv= "inv" , ran="rank",ort="ort";  
+  string dete="det"; 
+  string adj="adj";
+  string inv= "inv";
+  string ran="rank";
+  string ortho="ort";  
   
    cout<<"If you want the determinant of the given matrix then type 'yes' \n";
-   cin>>deter;
-   if(deter=="yes" ||deter=="Yes")
+   cin>>dete;
+   if(dete=="yes" ||dete=="Yes")
    if(det==0)cout<<"DETERMINANT= "<<det<<", Inverse Does Not Exist. \n\n";
 
 else
 {
-  if(deter=="yes" || deter=="Yes")
+  if(dete=="yes" || dete=="Yes")
   cout<<"DETERMINANT:  "<<det<<" \n\n";
   
   cout<<"\nIf you want the adjoint of the given matrix then type 'yes' \n";
@@ -131,8 +135,8 @@ else
     
   }
   cout<<"\nIf you want to know if the matrix is orthogonal then type 'yes' \n";
-  cin>>ort;
-  if(ort=="yes"||ort=="Yes"){
+  cin>>ortho;
+  if(ortho=="yes"||ortho=="Yes"){
     int flag=1;
     for(int i=1;i<=n;i++){
       for(int j=1;j<=m;j++){
